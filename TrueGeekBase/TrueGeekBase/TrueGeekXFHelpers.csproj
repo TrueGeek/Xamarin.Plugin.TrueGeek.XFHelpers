@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>Xamarin.Plugin.TrueGeek.XFHelpers</PackageId>
+    <Authors>Brad Dean</Authors>
+    <Copyright>MIT License
+
+Copyright (c) 2019 Brad Dean</Copyright>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <PackageLicenseUrl>https://github.com/TrueGeek/Xamarin.Plugin.TrueGeek.XFHelpers/blob/master/LICENSE</PackageLicenseUrl>
+    <Owners>Brad Dean</Owners>
+    <PackageProjectUrl>https://github.com/TrueGeek/Xamarin.Plugin.TrueGeek.XFHelpers</PackageProjectUrl>
+    <PackageReleaseNotes>Initial version</PackageReleaseNotes>
+    <Summary>A collection of plugins and base classes for Xamarin.Forms</Summary>
+    <Title>Xamarin.Plugin.TrueGeek.XFHelpers</Title>
+    <Description>A collection of plugins and base classes for Xamarin Forms that I find useful, maybe you will too</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\" />
+    <Folder Include="Converters\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />
+  </ItemGroup>
+</Project>
