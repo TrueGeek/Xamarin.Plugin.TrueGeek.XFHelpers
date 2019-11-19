@@ -1,18 +1,30 @@
 ﻿using System;
 using System.Threading.Tasks;
 using TrueGeek.XFHelpers.Views;
-using TrueGeekXFHelpers.Interfaces;
 using Xamarin.Forms;
 
 namespace TrueGeekXFHelpers.Services
 {
 
-    public class NavigationService : INavigationService
+    public class NavigationService
     {
 
         private INavigation _navigation;
 
-        public void Init(INavigation navigation)
+        /// <summary>
+        /// Call this immediatly after setting the MainPage of your application. Pass it MainPage.Navigation.
+        /// </summary>
+        /// <param name="navigation"></param>
+        public NavigationService(INavigation navigation)
+        {
+            _navigation = navigation;
+        }
+
+        /// <summary>
+        /// Call this if the MainPage of your application is changed
+        /// </summary>
+        /// <param name="navigation"></param>
+        public void UpdateMainPage(INavigation navigation)
         {
             _navigation = navigation;
         }

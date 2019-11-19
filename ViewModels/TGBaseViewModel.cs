@@ -44,7 +44,7 @@ namespace TrueGeek.XFHelpers.ViewModels
             return await Application.Current.MainPage.DisplayActionSheet(title, cancelButtonText, null, buttons);
         }
 
-        protected Task<bool> DisplayAlert(string title, string message, string accept, string cancel)
+        protected Task<bool> DisplayAlert(string title, string message, string accept = "okay", string cancel = "cancel")
         {
             return Application.Current.MainPage.DisplayAlert(title, message, accept, cancel);
         }
