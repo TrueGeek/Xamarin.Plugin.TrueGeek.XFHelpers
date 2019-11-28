@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using TrueGeek.XFHelpers.Helpers;
+using TrueGeek.XFHelpers.Views;
 using Xamarin.Forms;
 
 namespace TrueGeek.XFHelpers.ViewModels

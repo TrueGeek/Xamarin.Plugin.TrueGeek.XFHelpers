@@ -15,7 +15,8 @@ Copyright (c) 2019 Brad Dean</Copyright>
     <Summary>A collection of plugins and base classes for Xamarin.Forms</Summary>
     <Title>Xamarin.Plugin.TrueGeek.XFHelpers</Title>
     <Description>A collection of plugins and base classes for Xamarin Forms that I find useful, maybe you will too</Description>
-    <PackageVersion>1.0.1</PackageVersion>
+    <PackageVersion>1.0.2</PackageVersion>
+    <RootNamespace>TrueGeek.XFHelpers</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,8 +25,14 @@ Copyright (c) 2019 Brad Dean</Copyright>
     <Folder Include="Converters\" />
     <Folder Include="Helpers\" />
     <Folder Include="Services\" />
+    <Folder Include="PubSub\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\TGBasePage.xaml.cs">
+      <DependentUpon>TGBasePage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>
