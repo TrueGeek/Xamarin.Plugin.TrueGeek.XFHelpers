@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="clr-namespace:TrueGeek.XFHelpers.Converters;assembly=TrueGeekXFHelpers"
+    mc:Ignorable="d" x:Class="TGSample.App">
+
+    <Application.Resources>
+
+        <ResourceDictionary>
+
+            <!-- base style for buttons -->
+            <Style TargetType="Button">
+
+                <Setter Property="BorderWidth" Value="1" />
+                <Setter Property="BorderColor" Value="LightGray" />
+                <Setter Property="CornerRadius" Value="15" />
+                <Setter Property="Padding" Value="20" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+
+            </Style>
+
+            <!-- converters -->
+            <converters:InverseBoolConverter x:Key="InverseBoolConveter" />
+
+        </ResourceDictionary>
+
+    </Application.Resources>
+
+</Application>

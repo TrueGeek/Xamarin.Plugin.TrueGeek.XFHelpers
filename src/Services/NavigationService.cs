@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using TrueGeek.XFHelpers.Views;
 using Xamarin.Forms;
 
-namespace TrueGeekXFHelpers.Services
+namespace TrueGeek.XFHelpers.Services
 {
 
     public class NavigationService

@@ -16,17 +16,10 @@ namespace TrueGeek.XFHelpers.Views
         public TGBasePage()
         {
 
-            InitializeComponent();            
+            InitializeComponent();
 
             // set default busy overlay content
-            IsBusyOverlayContent = new ActivityIndicator()
-            {
-                IsVisible = true,
-                IsRunning = true,
-                Color = Color.Black,
-                HorizontalOptions = LayoutOptions.FillAndExpand,
-                VerticalOptions = LayoutOptions.FillAndExpand,
-            };
+            IsBusyOverlayContent = Statics.CustomActivityIndicator;
 
         }
 
@@ -77,6 +70,7 @@ namespace TrueGeek.XFHelpers.Views
                 return;
             }
             SetInheritedBindingContext(MainContent, BindingContext);
+            SetInheritedBindingContext(IsBusyOverlayContent, BindingContext);
         }
 
     }

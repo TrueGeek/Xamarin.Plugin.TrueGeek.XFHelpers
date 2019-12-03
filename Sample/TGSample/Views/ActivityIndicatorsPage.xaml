@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<baseView:TGBasePage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:baseView="clr-namespace:TrueGeek.XFHelpers.Views;assembly=TrueGeekXFHelpers"
+    xmlns:vw="clr-namespace:TGSample.ViewModels"
+    x:Class="TGSample.Views.ActivityIndicatorsPage">
+
+    <ContentPage.BindingContext>
+        <vw:ActivityIndicatorsViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="20" Spacing="20">
+
+        <Button Text="Show Indicator" Command="{Binding ShowIndicator}" IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConveter}}" />
+
+        <Button Text="Set Custom Indicator" Command="{Binding SetCustomIndicator}" IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConveter}}" />
+
+    </StackLayout>    
+
+</baseView:TGBasePage>
