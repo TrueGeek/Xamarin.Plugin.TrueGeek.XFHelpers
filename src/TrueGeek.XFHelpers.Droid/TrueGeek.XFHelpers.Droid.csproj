@@ -26,11 +26,10 @@ Copyright (c) 2019 Brad Dean</Copyright>
     <PackageLicenseUrl>https://github.com/TrueGeek/Xamarin.Plugin.TrueGeek.XFHelpers/blob/master/LICENSE</PackageLicenseUrl>
     <Owners>Brad Dean</Owners>
     <PackageProjectUrl>https://github.com/TrueGeek/Xamarin.Plugin.TrueGeek.XFHelpers</PackageProjectUrl>
-    <PackageReleaseNotes></PackageReleaseNotes>
     <Summary>A collection of plugins and base classes for Xamarin.Forms</Summary>
     <Title>Xamarin.Plugin.TrueGeek.XFHelpers</Title>
     <Description>A collection of plugins and base classes for Xamarin Forms that I find useful, maybe you will too</Description>
-    <PackageVersion>1.0.3</PackageVersion>
+    <PackageVersion>1.0.4</PackageVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -55,8 +54,6 @@ Copyright (c) 2019 Brad Dean</Copyright>
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
