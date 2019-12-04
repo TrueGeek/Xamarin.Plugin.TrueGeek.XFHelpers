@@ -25,6 +25,8 @@ namespace TGSample.iOS
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
+            TrueGeek.XFHelpers.iOS.Effects.iOSLongPressedEffect.Initialize();
+
             return base.FinishedLaunching(app, options);
         }
     }

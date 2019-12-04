@@ -128,6 +128,14 @@
       <Project>{FB913CC6-D2F5-4AE8-B56B-DAE3195849C7}</Project>
       <Name>TGSample</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\TrueGeek.XFHelpers.iOS\TrueGeek.XFHelpers.iOS.csproj">
+      <Project>{7ED2DF4A-AEF2-46AA-96A9-432B6A6A5915}</Project>
+      <Name>TrueGeek.XFHelpers.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\TrueGeek.XFHelpers.csproj">
+      <Project>{F1FEA1DE-40A7-4579-837A-1C3823BD9EB0}</Project>
+      <Name>TrueGeek.XFHelpers</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

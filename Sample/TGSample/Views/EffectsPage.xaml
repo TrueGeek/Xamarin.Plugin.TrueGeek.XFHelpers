@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<baseView:TGBasePage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:baseView="clr-namespace:TrueGeek.XFHelpers.Views;assembly=TrueGeek.XFHelpers"
+    xmlns:vm="clr-namespace:TGSample.ViewModels"
+    xmlns:effects="clr-namespace:TrueGeek.XFHelpers.Effects;assembly=TrueGeek.XFHelpers"
+    x:Class="TGSample.Views.EffectsPage" Title="Effects">
+
+    <ContentPage.BindingContext>
+        <vm:EffectsViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="20" Spacing="20">
+
+        <Button
+            Text="(Long)Press Me"
+            Command="{Binding PressCommand}"
+            IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConveter}}"
+            effects:LongPressedEffect.Command="{Binding LongPressCommand}"            
+            >
+
+            <Button.Effects>
+                <effects:LongPressedEffect />
+            </Button.Effects>
+
+        </Button>
+
+    </StackLayout>
+
+</baseView:TGBasePage>

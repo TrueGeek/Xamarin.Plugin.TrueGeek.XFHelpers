@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<baseView:TGBasePage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:baseView="clr-namespace:TrueGeek.XFHelpers.Views;assembly=TrueGeek.XFHelpers"
+    xmlns:vm="clr-namespace:TGSample.ViewModels"
+    xmlns:converters="clr-namespace:TrueGeek.XFHelpers.Converters;assembly=TrueGeek.XFHelpers"
+    x:Class="TGSample.Views.TranslationsPage" Title="Translations">
+
+    <ContentPage.BindingContext>
+        <vm:TranslationsViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="20" Spacing="20">
+
+        <Label Text="Text (translated in view model)" FontAttributes="Bold" />
+        <Label Text="{Binding TranslatedText}" />
+
+        <Label Text="Text (translated in XAML)" FontAttributes="Bold" />
+        <Label Text="{converters:Translate helper_functions}" />
+
+        <Label Text="(Switch your simulator to German to see the non-English translations)" />
+
+    </StackLayout>
+
+</baseView:TGBasePage>

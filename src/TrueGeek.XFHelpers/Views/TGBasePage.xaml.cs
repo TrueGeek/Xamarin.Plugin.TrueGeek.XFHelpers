@@ -19,7 +19,7 @@ namespace TrueGeek.XFHelpers.Views
             InitializeComponent();
 
             // set default busy overlay content
-            IsBusyOverlayContent = Statics.CustomActivityIndicator;
+            IsBusyOverlayContent = Init.CustomActivityIndicator;
 
         }
 

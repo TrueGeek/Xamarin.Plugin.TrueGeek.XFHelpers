@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Reflection;
+using System.Resources;
 using TGSample.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -9,15 +11,18 @@ namespace TGSample
     {
         public App()
         {
+
             InitializeComponent();
+
+            TrueGeek.XFHelpers.Init.ResourceManager = new ResourceManager("TGSample.Resources.AppResources", typeof(App).GetTypeInfo().Assembly);
             ResetMainPage<HomePage>();
+
         }
 
         public void ResetMainPage<T>() where T : Page
-        {
-            // instead of a NavigationPage you could also use an AppShell
-            MainPage = new NavigationPage(Activator.CreateInstance<T>());
-            TrueGeek.XFHelpers.Statics.NavigationService = new TrueGeek.XFHelpers.Services.NavigationService(MainPage.Navigation);
+        {            
+            MainPage = new NavigationPage(Activator.CreateInstance<T>());   // instead of a NavigationPage you could also use an AppShell
+            TrueGeek.XFHelpers.Init.NavigationService = new TrueGeek.XFHelpers.Services.NavigationService(MainPage.Navigation);
         }
 
         protected override void OnStart()

@@ -2,7 +2,7 @@
 <baseView:TGBasePage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:baseView="clr-namespace:TrueGeek.XFHelpers.Views;assembly=TrueGeekXFHelpers"
+    xmlns:baseView="clr-namespace:TrueGeek.XFHelpers.Views;assembly=TrueGeek.XFHelpers"
     xmlns:vm="clr-namespace:TGSample.ViewModels"
     x:Class="TGSample.Views.HomePage" Title="Sample App">
 
@@ -13,6 +13,10 @@
     <StackLayout Padding="20" Spacing="20">
 
         <Button Text="Activity Indicator" Command="{Binding GoToActivityIndicatorPage}" />
+
+        <Button Text="Effects" Command="{Binding GoToEffectsPage}" />
+
+        <Button Text="Translations" Command="{Binding GoToTranslationsPage}" />
 
     </StackLayout>
 

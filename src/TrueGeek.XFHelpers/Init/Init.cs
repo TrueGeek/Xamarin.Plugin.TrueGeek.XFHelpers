@@ -1,14 +1,16 @@
 ﻿using TrueGeek.XFHelpers.Services;
 using Xamarin.Forms;
 using Xamarin.Essentials;
+using System.Resources;
+using System;
 
 namespace TrueGeek.XFHelpers
 {
 
-    public static class Statics
+    public static class Init
     {
 
-        static Statics()
+        static Init()
         {
 
             CustomActivityIndicator = new ActivityIndicator()
@@ -22,9 +24,18 @@ namespace TrueGeek.XFHelpers
 
         }
 
-        public static NavigationService NavigationService { get; set; }
+        public static NavigationService NavigationService
+        {
+            get => Navigation.NavigationService;
+            set
+            {
+                Navigation.NavigationService = value;
+            }
+        }
 
         public static View CustomActivityIndicator { get; set; }
+
+        public static ResourceManager ResourceManager { get; set; }
 
     }
 

@@ -34,13 +34,13 @@ namespace TGSample.ViewModels
 
             IsBusy = true;
 
-            TrueGeek.XFHelpers.Statics.CustomActivityIndicator = new Components.CustomActivityIndicator();
+            TrueGeek.XFHelpers.Init.CustomActivityIndicator = new Components.CustomActivityIndicator();
 
             await DisplayAlert("Reloading", "The activity indicator won't take effect until the next time the base page is loaded. I'll close and re-open this page so you can see it. Typically you'd load the custom activity indicator on app.xaml.cs so this wouldn't be a problem");
 
-            await TrueGeek.XFHelpers.Statics.NavigationService.NavigateToRoot();
+            await TrueGeek.XFHelpers.Navigation.NavigationService.NavigateToRoot();
 
-            await TrueGeek.XFHelpers.Statics.NavigationService.NavigateTo<ActivityIndicatorsViewModel>();
+            await TrueGeek.XFHelpers.Navigation.NavigationService.NavigateTo<ActivityIndicatorsViewModel>();
 
             IsBusy = false;
 
