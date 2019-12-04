@@ -16,9 +16,6 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\TrueGeek.XFHelpers.csproj" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Update="Resources\AppResources.de.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.de.Designer.cs</LastGenOutput>
@@ -35,5 +32,8 @@
     <Compile Update="Resources\AppResources.Designer.cs">
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\TrueGeek.XFHelpers\TrueGeek.XFHelpers.csproj" />
   </ItemGroup>
 </Project>

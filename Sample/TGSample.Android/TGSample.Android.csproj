@@ -92,13 +92,13 @@
       <Project>{FB913CC6-D2F5-4AE8-B56B-DAE3195849C7}</Project>
       <Name>TGSample</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\TrueGeek.XFHelpers.Droid\TrueGeek.XFHelpers.Droid.csproj">
-      <Project>{1594C83B-F6CC-4F72-A065-2C5234035522}</Project>
-      <Name>TrueGeek.XFHelpers.Droid</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\TrueGeek.XFHelpers.csproj">
+    <ProjectReference Include="..\..\src\TrueGeek.XFHelpers\TrueGeek.XFHelpers.csproj">
       <Project>{F1FEA1DE-40A7-4579-837A-1C3823BD9EB0}</Project>
       <Name>TrueGeek.XFHelpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\TrueGeek.XFHelpers.Droid\TrueGeek.XFHelpers.Droid.csproj">
+      <Project>{1594C83B-F6CC-4F72-A065-2C5234035522}</Project>
+      <Name>TrueGeek.XFHelpers.Droid</Name>
     </ProjectReference>
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

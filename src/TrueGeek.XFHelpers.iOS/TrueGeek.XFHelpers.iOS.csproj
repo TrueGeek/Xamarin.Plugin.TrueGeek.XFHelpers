@@ -62,9 +62,14 @@ Copyright (c) 2019 Brad Dean</Copyright>
     <PackageReference Include="Xamarin.Forms">
       <Version>4.3.0.908675</Version>
     </PackageReference>
+    <PackageReference Include="NuGet.Build.Packaging">
+      <Version>0.2.2</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\src\TrueGeek.XFHelpers.csproj">
+    <ProjectReference Include="..\TrueGeek.XFHelpers\TrueGeek.XFHelpers.csproj">
       <Project>{F1FEA1DE-40A7-4579-837A-1C3823BD9EB0}</Project>
       <Name>TrueGeek.XFHelpers</Name>
     </ProjectReference>
