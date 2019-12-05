@@ -15,11 +15,11 @@ namespace TGSample
             InitializeComponent();
 
             TrueGeek.XFHelpers.Init.ResourceManager = new ResourceManager("TGSample.Resources.AppResources", typeof(App).GetTypeInfo().Assembly);
-            ResetMainPage<HomePage>();
+            SetMainPage<HomePage>();
 
         }
 
-        public void ResetMainPage<T>() where T : Page
+        public void SetMainPage<T>() where T : Page
         {            
             MainPage = new NavigationPage(Activator.CreateInstance<T>());   // instead of a NavigationPage you could also use an AppShell
             TrueGeek.XFHelpers.Init.NavigationService = new TrueGeek.XFHelpers.Services.NavigationService(MainPage.Navigation);

@@ -16,9 +16,7 @@ namespace TrueGeek.XFHelpers.Droid.Effects
         /// <summary>
         /// Initializer to avoid linking out
         /// </summary>
-        public static void Initialize()
-        {
-        }
+        public static void Init() { }
 
         /// <summary>
         /// Initializes a new instance of the

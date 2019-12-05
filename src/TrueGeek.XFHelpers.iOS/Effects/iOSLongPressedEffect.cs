@@ -12,7 +12,7 @@ namespace TrueGeek.XFHelpers.iOS.Effects
     public class iOSLongPressedEffect : PlatformEffect
     {
 
-        public static void Initialize() {  }
+        public static void Init() {  }
 
         private readonly UILongPressGestureRecognizer _longPressRecognizer;
 

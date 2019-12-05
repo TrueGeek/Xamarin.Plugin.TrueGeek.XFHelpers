@@ -22,7 +22,7 @@ namespace TGSample.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
-            TrueGeek.XFHelpers.Droid.Effects.AndroidLongPressedEffect.Initialize();
+            TrueGeek.XFHelpers.Droid.Effects.AndroidLongPressedEffect.Init();
 
             LoadApplication(new App());
         }
