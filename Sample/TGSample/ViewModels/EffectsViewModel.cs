@@ -21,7 +21,7 @@ namespace TGSample.ViewModels
         {
             if (IsBusy) return;
             IsBusy = true;
-            await DisplayAlert("Effects", "This is a press");
+            await DisplayAlert("Effects", "This is a press", "okay");
             IsBusy = false;
         }
 
@@ -30,7 +30,7 @@ namespace TGSample.ViewModels
         {
             if (IsBusy) return;
             IsBusy = true;
-            await DisplayAlert("Effects", "This is a long press");
+            await DisplayAlert("Effects", "This is a long press", "okay");
             IsBusy = false;
         }
 

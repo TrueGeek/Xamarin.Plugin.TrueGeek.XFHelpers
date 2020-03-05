@@ -2603,6 +2603,7 @@ namespace TGSample.Droid
 			global::TrueGeek.XFHelpers.Droid.Resource.Styleable.View_paddingEnd = global::TGSample.Droid.Resource.Styleable.View_paddingEnd;
 			global::TrueGeek.XFHelpers.Droid.Resource.Styleable.View_paddingStart = global::TGSample.Droid.Resource.Styleable.View_paddingStart;
 			global::TrueGeek.XFHelpers.Droid.Resource.Styleable.View_theme = global::TGSample.Droid.Resource.Styleable.View_theme;
+			global::TrueGeek.XFHelpers.Droid.Resource.Xml.xamarin_essentials_fileprovider_file_paths = global::TGSample.Droid.Resource.Xml.xamarin_essentials_fileprovider_file_paths;
 			global::Xamarin.Essentials.Resource.Attribute.alpha = global::TGSample.Droid.Resource.Attribute.alpha;
 			global::Xamarin.Essentials.Resource.Attribute.coordinatorLayoutStyle = global::TGSample.Droid.Resource.Attribute.coordinatorLayoutStyle;
 			global::Xamarin.Essentials.Resource.Attribute.font = global::TGSample.Droid.Resource.Attribute.font;

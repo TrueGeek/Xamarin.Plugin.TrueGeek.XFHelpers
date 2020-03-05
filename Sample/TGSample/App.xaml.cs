@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Reflection;
 using System.Resources;
 using TGSample.Views;
@@ -14,7 +15,13 @@ namespace TGSample
 
             InitializeComponent();
 
+            // set language code either of these two ways
+            // if you don't set it, it'll default to CultureInfo.CurrentCulture.TwoLetterISOLanguageName
+            //TrueGeek.XFHelpers.Init.LanguageCode = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+            TrueGeek.XFHelpers.Init.LanguageCode = "en";        // try "de"
+           
             TrueGeek.XFHelpers.Init.ResourceManager = new ResourceManager("TGSample.Resources.AppResources", typeof(App).GetTypeInfo().Assembly);
+
             SetMainPage<HomePage>();
 
         }

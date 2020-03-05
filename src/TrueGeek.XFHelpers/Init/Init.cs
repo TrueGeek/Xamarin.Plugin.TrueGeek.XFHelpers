@@ -37,6 +37,8 @@ namespace TrueGeek.XFHelpers
 
         public static ResourceManager ResourceManager { get; set; }
 
+        public static string LanguageCode { get; set; }
+
     }
 
 }

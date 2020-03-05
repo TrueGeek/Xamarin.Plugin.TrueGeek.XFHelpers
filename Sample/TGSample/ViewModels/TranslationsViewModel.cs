@@ -11,7 +11,12 @@ namespace TGSample.ViewModels
     public class TranslationsViewModel : TGBaseViewModel
     {
 
-        public string TranslatedText => Resources.AppResources.helper_functions;
+        public string TranslatedText { get; set; }
+
+        public TranslationsViewModel()
+        {
+            TranslatedText = new TrueGeek.XFHelpers.Helpers.TranslationHelper().GetText("helper_functions");
+        }
 
     }
 

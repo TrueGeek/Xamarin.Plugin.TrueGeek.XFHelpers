@@ -1,33 +1,29 @@
-using System;
+﻿using System;
 using System.Globalization;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
-namespace TrueGeek.XFHelpers.Converters
+namespace TrueGeek.XFHelpers.Helpers
 {
 
-    [ContentProperty("Text")]
-    public class TranslateExtension : IMarkupExtension
+    public class TranslationHelper
     {
 
-        public string Text { get; set; }
-
-        public object ProvideValue(IServiceProvider serviceProvider)
+        public string GetText(string text)
         {
 
-            if (Text == null) return null;
+            // this is duplicated here and in TranslateExtension - need to clean that up
+            if (text == null) return null;
 
             var languageCode = Init.LanguageCode;
 
             if (string.IsNullOrEmpty(languageCode)) languageCode = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
 
             //var translation = Init.ResourceManager.GetString(Text, CultureInfo.CurrentCulture);            
-            var translation = Init.ResourceManager.GetString(Text, CultureInfo.GetCultureInfo(languageCode));
+            var translation = Init.ResourceManager.GetString(text, CultureInfo.GetCultureInfo(languageCode));
 
             // if we weren't able to find a translation then try it again for English
             if (string.IsNullOrEmpty(translation) && CultureInfo.CurrentCulture.TwoLetterISOLanguageName != "en")
             {
-                return Init.ResourceManager.GetString(Text, CultureInfo.GetCultureInfo("en-US"));
+                return Init.ResourceManager.GetString(text, CultureInfo.GetCultureInfo("en-US"));
             }
 
             return translation;

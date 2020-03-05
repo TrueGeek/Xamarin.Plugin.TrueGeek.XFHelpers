@@ -19,7 +19,7 @@
         <Label Text="Text (translated in XAML)" FontAttributes="Bold" />
         <Label Text="{converters:Translate helper_functions}" />
 
-        <Label Text="(Switch your simulator to German to see the non-English translations)" />
+        <Label Text="(Switch the language in App.xaml.cs to German to see the non-English translations)" />
 
     </StackLayout>
 

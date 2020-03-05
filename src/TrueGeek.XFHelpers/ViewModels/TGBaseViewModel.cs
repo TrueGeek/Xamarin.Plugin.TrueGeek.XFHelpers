@@ -45,12 +45,17 @@ namespace TrueGeek.XFHelpers.ViewModels
             return await Application.Current.MainPage.DisplayActionSheet(title, cancelButtonText, null, buttons);
         }
 
-        protected Task<bool> DisplayAlert(string title, string message, string accept = "okay", string cancel = "cancel")
+        protected Task DisplayAlert(string title, string message, string accept)
         {
-            return Application.Current.MainPage.DisplayAlert(title, message, accept, cancel);
+            return Application.Current.MainPage.DisplayAlert(title, message, accept);
         }
 
-        protected Task<string> DisplayPrompt(string title, string message, string accept = "okay", string cancel = "cancel", string placeholder = null, int maxLength = -1, Keyboard keyboard = null)
+        protected Task<bool> DisplayAlert(string title, string message, string accept, string cancel)
+        {
+            return Application.Current.MainPage.DisplayAlert(title, message, accept, cancel);            
+        }
+
+        protected Task<string> DisplayPrompt(string title, string message, string accept, string cancel, string placeholder = null, int maxLength = -1, Keyboard keyboard = null)
         {
             return Application.Current.MainPage.DisplayPromptAsync(title, message, accept, cancel, placeholder, maxLength, keyboard);
         }
