@@ -6,7 +6,7 @@
     <Authors>Brad Dean</Authors>
     <Copyright>MIT License
 
-Copyright (c) 2019 Brad Dean</Copyright>
+Copyright (c) 2020 Brad Dean</Copyright>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageLicenseUrl>https://github.com/TrueGeek/Xamarin.Plugin.TrueGeek.XFHelpers/blob/master/LICENSE</PackageLicenseUrl>
     <Owners>Brad Dean</Owners>
@@ -14,7 +14,7 @@ Copyright (c) 2019 Brad Dean</Copyright>
     <Summary>A collection of plugins and base classes for Xamarin.Forms</Summary>
     <Title>Xamarin.Plugin.TrueGeek.XFHelpers</Title>
     <Description>A collection of plugins and base classes for Xamarin Forms that I find useful, maybe you will too</Description>
-    <PackageVersion>1.0.7</PackageVersion>
+    <PackageVersion>1.0.8</PackageVersion>
     <RootNamespace>TrueGeek.XFHelpers</RootNamespace>
   </PropertyGroup>
 
@@ -34,10 +34,6 @@ Copyright (c) 2019 Brad Dean</Copyright>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
-    <PackageReference Include="NuGet.Build.Packaging" Version="0.2.2">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Views\TGBasePage.xaml.cs">
