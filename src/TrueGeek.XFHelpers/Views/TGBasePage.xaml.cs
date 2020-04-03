@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using TrueGeek.XFHelpers.ViewModels;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using Xamarin.Forms.Xaml;
+using NavigationPage = Xamarin.Forms.NavigationPage;
 
 namespace TrueGeek.XFHelpers.Views
 {
@@ -13,13 +13,27 @@ namespace TrueGeek.XFHelpers.Views
     public partial class TGBasePage : ContentPage
     {
 
+        public Thickness SafeAreaInsets { get; }
+
         public TGBasePage()
         {
 
             InitializeComponent();
 
+            if (Init.ClearBackButtonTextOnAllPages) NavigationPage.SetBackButtonTitle(this, string.Empty);
+
             // set default busy overlay content
             IsBusyOverlayContent = Init.CustomActivityIndicator;
+
+            // get value for SafeAreaInsets
+            if (Device.RuntimePlatform == Device.iOS)
+            {
+                SafeAreaInsets = On<Xamarin.Forms.PlatformConfiguration.iOS>().SafeAreaInsets();    // 20 or 40 px depending on phone type
+            }
+            else
+            {
+                SafeAreaInsets = new Thickness();   // we don't care about this on Android
+            }
 
         }
 

@@ -12,13 +12,27 @@ namespace TrueGeek.XFHelpers.ViewModels
 {
 
     public class TGBaseViewModel : INotifyPropertyChanged
-    {
+    {        
 
         private bool isBusy;
         public bool IsBusy
         {
             get => isBusy;
             set => SetProperty(ref isBusy, value);
+        }
+
+        private string title;
+        public string Title
+        {
+            get => title;
+            set => SetProperty(ref title, value);
+        }
+
+        private object returnParameters;
+        public object ReturnParameters
+        {
+            get => returnParameters;
+            set => SetProperty(ref returnParameters, value);
         }
 
         #pragma warning disable

@@ -18,6 +18,8 @@
 
         <Button Text="Translations" Command="{Binding GoToTranslationsPage}" />
 
+        <Button Text="Return Parameters" Command="{Binding GoToReturnParametersPage}" />
+
     </StackLayout>
 
 </baseView:TGBasePage>
