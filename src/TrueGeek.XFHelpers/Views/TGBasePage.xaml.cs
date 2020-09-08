@@ -15,6 +15,11 @@ namespace TrueGeek.XFHelpers.Views
 
         public Thickness SafeAreaInsets { get; }
 
+        // these are used to manually fire ViewModelInit when the
+        // page is set to a Detail in a MasterDetailPage
+        public bool FireViewModelInitAfterAppearing { get; set; }
+        public object ViewModelInitParameters { get; set; }
+
         public TGBasePage()
         {
 
@@ -39,7 +44,16 @@ namespace TrueGeek.XFHelpers.Views
 
         protected async override void OnAppearing()
         {
-            if (BindingContext is TGBaseViewModel viewModel) await viewModel.ViewAppearingAsync();
+
+            if (BindingContext is TGBaseViewModel viewModel)
+            {
+
+                await viewModel.ViewAppearingAsync();
+
+                if (FireViewModelInitAfterAppearing) await viewModel.ViewModelInit(ViewModelInitParameters);
+
+            }
+
             base.OnAppearing();
         }
 

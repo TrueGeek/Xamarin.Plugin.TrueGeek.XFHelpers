@@ -35,6 +35,10 @@ namespace TrueGeek.XFHelpers.ViewModels
             set => SetProperty(ref returnParameters, value);
         }
 
+        public bool DeviceIsTabletOrDesktop =>
+            Device.Idiom == TargetIdiom.Tablet
+            || Device.Idiom == TargetIdiom.Desktop;
+
         #pragma warning disable
         public virtual async Task ViewAppearingAsync()
         {

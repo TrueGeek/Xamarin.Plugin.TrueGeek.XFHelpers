@@ -74,14 +74,26 @@ namespace TrueGeek.XFHelpers.Services
 
         }
 
-        public async Task NavigateToModal<TViewModel>(object parameters = null)
+        public async Task NavigateToModal<TViewModel>(object parameters = null, bool useNavigationPage = false, Style navigationPageStyle = null)
         {
 
             var page = GetPageFromViewModel(typeof(TViewModel));
             if (page != null)
             {
                 page.Disappearing += OnPageDisappearingInternal;
-                await _navigation.PushModalAsync(page, true);
+
+                if (useNavigationPage)
+                {
+                    await _navigation.PushModalAsync(new NavigationPage(page)
+                    {
+                        Style = navigationPageStyle,
+                    }, true);
+                }
+                else
+                {
+                    await _navigation.PushModalAsync(page, true);
+                }                
+
                 if (parameters != null)
                 {
                     await (page as TGBasePage).ViewModelInit(parameters);
@@ -95,9 +107,59 @@ namespace TrueGeek.XFHelpers.Services
             await _navigation.PopAsync(true);
         }
 
+        public async Task NavigateBackFromModal()
+        {
+            await _navigation.PopModalAsync(true);
+        }
+
         public async Task NavigateToRoot()
         {
             await _navigation.PopToRootAsync(true);
+        }
+
+        public Page GetPageForMasterDetail<TViewModel>(object parameters = null, bool useNavigationPage = true, Style navigationPageStyle = null)
+        {
+
+            try
+            {
+
+                var page = GetPageFromViewModel(typeof(TViewModel)) as TGBasePage;
+                if (page != null)
+                {
+
+                    page.Disappearing += OnPageDisappearingInternal;
+
+                    if (parameters != null)
+                    {
+                        page.FireViewModelInitAfterAppearing = true;
+                        page.ViewModelInitParameters = parameters;
+                    }
+
+                }
+
+                if (useNavigationPage)
+                {
+
+                    return new NavigationPage(page)
+                    {
+                        Style = navigationPageStyle,
+                    };
+
+                }
+                else
+                {
+
+                    return page;
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Helpers.LoggingHelper.Log($"TrueGeek.XFHelpers.SetMasterDetailDetailPage {ex.Message}", Models.LogLevel.Error);
+                return null;
+            }
+
         }
 
         private Page GetPageFromViewModel(Type viewModelType)
