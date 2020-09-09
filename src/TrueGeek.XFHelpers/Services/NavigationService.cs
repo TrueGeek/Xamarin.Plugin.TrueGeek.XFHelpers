@@ -94,10 +94,8 @@ namespace TrueGeek.XFHelpers.Services
                     await _navigation.PushModalAsync(page, true);
                 }                
 
-                if (parameters != null)
-                {
-                    await (page as TGBasePage).ViewModelInit(parameters);
-                }
+                await (page as TGBasePage).ViewModelInit(parameters);
+
             }
 
         }
@@ -129,11 +127,8 @@ namespace TrueGeek.XFHelpers.Services
 
                     page.Disappearing += OnPageDisappearingInternal;
 
-                    if (parameters != null)
-                    {
-                        page.FireViewModelInitAfterAppearing = true;
-                        page.ViewModelInitParameters = parameters;
-                    }
+                    page.FireViewModelInitAfterAppearing = true;
+                    page.ViewModelInitParameters = parameters;
 
                 }
 
