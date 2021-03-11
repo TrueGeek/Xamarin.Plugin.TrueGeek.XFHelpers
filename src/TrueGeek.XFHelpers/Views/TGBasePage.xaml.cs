@@ -20,6 +20,8 @@ namespace TrueGeek.XFHelpers.Views
         public bool FireViewModelInitAfterAppearing { get; set; }
         public object ViewModelInitParameters { get; set; }
 
+        public bool HasAppeared { get; set; }
+
         public TGBasePage()
         {
 
@@ -44,6 +46,8 @@ namespace TrueGeek.XFHelpers.Views
 
         protected async override void OnAppearing()
         {
+
+            HasAppeared = true;
 
             if (BindingContext is TGBaseViewModel viewModel)
             {

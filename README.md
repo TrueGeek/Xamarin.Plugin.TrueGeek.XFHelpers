@@ -65,6 +65,8 @@ A change log is available under [Releases](https://github.com/TrueGeek/Xamarin.P
 * [Converters](#Converters)
     * [Inverse Bool](#InverseBool)
     * [String To Bool](#StringToBool)
+* [Extensions](#Extensions)
+    * [Track Component Lifecycle](#TrackComponentLifecycleExtension)
 * [Effects](#Effects)
     * [Long Press](#LongPress)
 * [Logging](#Logging)
@@ -394,6 +396,32 @@ Standard inverse bool converter - returns `!true`
 **String Bool** <a name="#StringToBool"></a>
 
 Returns `false` if string is null or empty
+
+---
+
+## Extensions <a name="#Extensions"></a>
+
+**Track Component Lifecycle** <a name="#TrackComponentLifecycleExtension"></a>
+
+Extension that adds lifecycle events to custom components. Use like this:
+
+```C#
+
+public MyCustomGridComponent()
+{
+    InitializeComponent();
+   this.TrackComponentLifecycle(OnAppearing, OnDisappearing);
+}
+
+private void OnDisappearing(object sender, EventArgs eventArgs)
+{
+}
+
+private void OnAppearing(object sender, EventArgs eventArgs)
+{
+}
+
+```
 
 ---
 
