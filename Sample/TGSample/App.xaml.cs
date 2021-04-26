@@ -31,7 +31,7 @@ namespace TGSample
             MainPage = new NavigationPage(Activator.CreateInstance<T>());   // instead of a NavigationPage you could also use an AppShell
             TrueGeek.XFHelpers.Init.NavigationService = new TrueGeek.XFHelpers.Services.NavigationService(MainPage.Navigation);
 
-            var page = TrueGeek.XFHelpers.Navigation.NavigationService.GetDetailPageForMasterDetail<ReturnParametersPage>(null);
+            var page = TrueGeek.XFHelpers.Navigation.NavigationService.GetPageForMasterDetail<ReturnParametersPage>(null);
             var x = "";
             
 

@@ -14,7 +14,7 @@ Copyright (c) 2020 Brad Dean</Copyright>
     <Summary>A collection of plugins and base classes for Xamarin.Forms</Summary>
     <Title>Xamarin.Plugin.TrueGeek.XFHelpers</Title>
     <Description>A collection of plugins and base classes for Xamarin Forms that I find useful, maybe you will too</Description>
-    <PackageVersion>1.0.17</PackageVersion>
+    <PackageVersion>1.0.18</PackageVersion>
     <RootNamespace>TrueGeek.XFHelpers</RootNamespace>
   </PropertyGroup>
 
@@ -33,7 +33,7 @@ Copyright (c) 2020 Brad Dean</Copyright>
     <Folder Include="Extensions\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1874" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>
   <ItemGroup>
