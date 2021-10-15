@@ -38,20 +38,20 @@ namespace TrueGeek.XFHelpers.Services
             _navigation = navigation;
         }
 
-        public async Task NavigateTo<TViewModel>(object parameters = null)
+        public async Task NavigateTo<TViewModel>(object parameters = null, bool animated = true)
         {
 
             var page = GetPageFromViewModel(typeof(TViewModel));
             if (page != null)
             {
                 page.Disappearing += OnPageDisappearingInternal;
-                await _navigation.PushAsync(page, true);
+                await _navigation.PushAsync(page, animated);
                 await (page as TGBasePage).ViewModelInit(parameters);
             }
 
         }
 
-        public async Task NavigateTo<TViewModel, TPage>(object parameters = null)
+        public async Task NavigateTo<TViewModel, TPage>(object parameters = null, bool animated = true)
         {
 
             try
@@ -61,7 +61,7 @@ namespace TrueGeek.XFHelpers.Services
                 if (page != null)
                 {
                     page.Disappearing += OnPageDisappearingInternal;
-                    await _navigation.PushAsync(page, true);
+                    await _navigation.PushAsync(page, animated);
                     await (page as TGBasePage).ViewModelInit(parameters);
                 }
 
@@ -74,7 +74,7 @@ namespace TrueGeek.XFHelpers.Services
 
         }
 
-        public async Task NavigateToModal<TViewModel>(object parameters = null, bool useNavigationPage = false, Style navigationPageStyle = null)
+        public async Task NavigateToModal<TViewModel>(object parameters = null, bool useNavigationPage = false, Style navigationPageStyle = null, bool animated = true)
         {
 
             var page = GetPageFromViewModel(typeof(TViewModel));
@@ -91,7 +91,7 @@ namespace TrueGeek.XFHelpers.Services
                 }
                 else
                 {
-                    await _navigation.PushModalAsync(page, true);
+                    await _navigation.PushModalAsync(page, animated);
                 }                
 
                 await (page as TGBasePage).ViewModelInit(parameters);
@@ -100,9 +100,9 @@ namespace TrueGeek.XFHelpers.Services
 
         }
 
-        public async Task NavigateBack()
+        public async Task NavigateBack(bool animated = true)
         {
-            await _navigation.PopAsync(true);
+            await _navigation.PopAsync(animated);
         }
 
         public async Task NavigateBackFromModal()
@@ -110,9 +110,9 @@ namespace TrueGeek.XFHelpers.Services
             await _navigation.PopModalAsync(true);
         }
 
-        public async Task NavigateToRoot()
+        public async Task NavigateToRoot(bool animated = true)
         {
-            await _navigation.PopToRootAsync(true);
+            await _navigation.PopToRootAsync(animated);
         }
 
         public Page GetPageForMasterDetail<TViewModel>(object parameters = null, bool useNavigationPage = true, Style navigationPageStyle = null)
