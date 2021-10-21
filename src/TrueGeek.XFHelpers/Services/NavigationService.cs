@@ -38,12 +38,13 @@ namespace TrueGeek.XFHelpers.Services
             _navigation = navigation;
         }
 
-        public async Task NavigateTo<TViewModel>(object parameters = null, bool animated = true)
+        public async Task NavigateTo<TViewModel>(object parameters = null, bool animated = true, Style navigationPageStyle = null)
         {
 
             var page = GetPageFromViewModel(typeof(TViewModel));
             if (page != null)
             {
+                if (navigationPageStyle != null) page.Style = navigationPageStyle;
                 page.Disappearing += OnPageDisappearingInternal;
                 await _navigation.PushAsync(page, animated);
                 await (page as TGBasePage).ViewModelInit(parameters);
